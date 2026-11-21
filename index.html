@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — H Tees</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #faf9f6; color: #18181b; }
+    .text-display { font-family: 'Playfair Display', serif; font-weight: 800; letter-spacing: -0.02em; }
+    .bg-hero-overlay { background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%); }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-rise { animation: rise 0.45s ease-out forwards; }
+  </style>
+</head>
+<body class="min-h-screen antialiased">
+
+  <div class="min-h-screen lg:grid lg:grid-cols-2">
+    <!-- Left / Top Hero Section -->
+    <div class="relative h-64 overflow-hidden sm:h-80 lg:h-auto bg-zinc-900">
+      <img 
+        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80" 
+        alt="Two people wearing H Tees T-shirts" 
+        class="absolute inset-0 h-full w-full object-cover" 
+      />
+      <div class="absolute inset-0 bg-hero-overlay"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 text-white lg:p-12">
+        <p class="text-display text-4xl sm:text-5xl lg:text-7xl">Wear your story.</p>
+        <div class="mt-4 hidden flex-wrap gap-5 text-sm font-semibold lg:flex text-zinc-200">
+          <span class="flex items-center gap-2">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+            Delivery across India
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Secure UPI &amp; card payments
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right / Bottom Form Section -->
+    <div class="flex items-start justify-center px-5 py-8 lg:items-center lg:px-12">
+      <div class="w-full max-w-sm animate-rise">
+        
+        <!-- BrandMark -->
+        <a href="#" class="inline-flex items-center gap-2 text-xl font-extrabold tracking-tight text-zinc-900">
+          <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-900 text-sm font-black text-white">H</span>
+          <span>H TEES</span>
+        </a>
+
+        <!-- Heading & Subtitle -->
+        <h1 id="pageTitle" class="mt-6 text-display text-4xl text-zinc-900">Welcome back</h1>
+        <p id="pageSubtitle" class="mt-2 text-sm text-zinc-500">
+          Sign in to shop. We'll use your location to speed up delivery.
+        </p>
+
+        <!-- Social Login Buttons -->
+        <div id="socialSection" class="mt-6 grid gap-3">
+          <button type="button" onclick="socialLogin('Google')" class="flex h-11 w-full items-center justify-center gap-2.5 rounded-lg border border-zinc-200 bg-white px-4 text-sm font-medium text-zinc-800 shadow-sm transition hover:bg-zinc-50 active:scale-[0.99]">
+            <svg class="h-4 w-4" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96z"/>
+            </svg>
+            Continue with Google
+          </button>
+
+          <button type="button" onclick="socialLogin('Lovable')" class="flex h-11 w-full items-center justify-center gap-2.5 rounded-lg border border-zinc-200 bg-white px-4 text-sm font-medium text-zinc-800 shadow-sm transition hover:bg-zinc-50 active:scale-[0.99]">
+            <svg class="h-4 w-4 text-rose-500" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            Continue with Lovable
+          </button>
+
+          <div class="my-1 flex items-center gap-3 text-xs uppercase tracking-widest text-zinc-400">
+            <span class="h-px flex-1 bg-zinc-200"></span> or <span class="h-px flex-1 bg-zinc-200"></span>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="authForm" onsubmit="handleSubmit(event)" class="grid gap-4">
+          <div id="nameField" class="hidden grid gap-1.5">
+            <label for="name" class="text-sm font-medium text-zinc-800">Full name</label>
+            <input id="name" type="text" class="h-11 w-full rounded-lg border border-zinc-200 bg-white px-3 text-sm outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900" />
+          </div>
+
+          <div class="grid gap-1.5">
+            <label for="email" class="text-sm font-medium text-zinc-800">Email</label>
+            <input id="email" type="email" autocomplete="email" required class="h-11 w-full rounded-lg border border-zinc-200 bg-white px-3 text-sm outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900" />
+          </div>
+
+          <div id="passwordField" class="grid gap-1.5">
+            <div class="flex items-center justify-between">
+              <label for="password" class="text-sm font-medium text-zinc-800">Password</label>
+              <button type="button" id="forgotBtn" onclick="setMode('forgot')" class="text-xs font-semibold text-zinc-900 hover:underline">
+                Forgot password?
+              </button>
+            </div>
+            <input id="password" type="password" minlength="6" required class="h-11 w-full rounded-lg border border-zinc-200 bg-white px-3 text-sm outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900" />
+          </div>
+
+          <!-- Notice Box -->
+          <p id="noticeBox" class="hidden rounded-lg bg-zinc-100 p-3 text-sm font-medium text-zinc-800 border border-zinc-200"></p>
+
+          <button type="submit" id="submitBtn" class="mt-1 h-12 w-full rounded-lg bg-zinc-900 px-6 text-sm font-semibold text-white shadow transition hover:bg-zinc-800 active:scale-[0.99]">
+            Sign in
+          </button>
+        </form>
+
+        <!-- Toggle Sign in / Sign up -->
+        <p id="toggleText" class="mt-6 text-center text-sm text-zinc-500">
+          New here? <button type="button" class="font-bold text-zinc-900 hover:underline" onclick="setMode('signup')">Create an account</button>
+        </p>
+
+        <!-- Footer Location Info -->
+        <p class="mt-8 flex items-center justify-center gap-1.5 text-xs text-zinc-500">
+          <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          After sign-in we'll ask to use your location for delivery.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let mode = "signin";
+
+    function setMode(newMode) {
+      mode = newMode;
+      const notice = document.getElementById("noticeBox");
+      notice.classList.add("hidden");
+
+      const pageTitle = document.getElementById("pageTitle");
+      const pageSubtitle = document.getElementById("pageSubtitle");
+      const socialSection = document.getElementById("socialSection");
+      const authForm = document.getElementById("authForm");
+      const nameField = document.getElementById("nameField");
+      const nameInput = document.getElementById("name");
+      const passwordField = document.getElementById("passwordField");
+      const passwordInput = document.getElementById("password");
+      const forgotBtn = document.getElementById("forgotBtn");
+      const submitBtn = document.getElementById("submitBtn");
+      const toggleText = document.getElementById("toggleText");
+
+      if (mode === "signin") {
+        pageTitle.innerText = "Welcome back";
+        pageSubtitle.innerText = "Sign in to shop. We'll use your location to speed up delivery.";
+        socialSection.classList.remove("hidden");
+        authForm.classList.remove("mt-6");
+        nameField.classList.add("hidden");
+        nameInput.required = false;
+        passwordField.classList.remove("hidden");
+        passwordInput.required = true;
+        forgotBtn.classList.remove("hidden");
+        submitBtn.innerText = "Sign in";
+        toggleText.innerHTML = 'New here? <button type="button" class="font-bold text-zinc-900 hover:underline" onclick="setMode(\'signup\')">Create an account</button>';
+      } else if (mode === "signup") {
+        pageTitle.innerText = "Join H Tees";
+        pageSubtitle.innerText = "Sign in to shop. We'll use your location to speed up delivery.";
+        socialSection.classList.remove("hidden");
+        authForm.classList.remove("mt-6");
+        nameField.classList.remove("hidden");
+        nameInput.required = true;
+        passwordField.classList.remove("hidden");
+        passwordInput.required = true;
+        forgotBtn.classList.add("hidden");
+        submitBtn.innerText = "Create account";
+        toggleText.innerHTML = 'Already have an account? <button type="button" class="font-bold text-zinc-900 hover:underline" onclick="setMode(\'signin\')">Sign in</button>';
+      } else if (mode === "forgot") {
+        pageTitle.innerText = "Reset password";
+        pageSubtitle.innerText = "Enter your email and we'll send you a reset link.";
+        socialSection.classList.add("hidden");
+        authForm.classList.add("mt-6");
+        nameField.classList.add("hidden");
+        nameInput.required = false;
+        passwordField.classList.add("hidden");
+        passwordInput.required = false;
+        submitBtn.innerText = "Send reset link";
+        toggleText.innerHTML = 'Already have an account? <button type="button" class="font-bold text-zinc-900 hover:underline" onclick="setMode(\'signin\')">Sign in</button>';
+      }
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById("submitBtn");
+      const notice = document.getElementById("noticeBox");
+      const originalText = submitBtn.innerText;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Please wait…";
+      notice.classList.add("hidden");
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalText;
+        notice.classList.remove("hidden");
+
+        if (mode === "signin") {
+          notice.innerText = "Signed in! Redirecting to /shop...";
+        } else if (mode === "signup") {
+          notice.innerText = "Check your email and tap the link to confirm your account.";
+        } else {
+          notice.innerText = "We sent you a link to reset your password.";
+        }
+      }, 600);
+    }
+
+    function socialLogin(provider) {
+      const notice = document.getElementById("noticeBox");
+      notice.classList.remove("hidden");
+      notice.innerText = "Connecting with " + provider + "...";
+    }
+  </script>
+
+</body>
+</html>
+
